@@ -1,0 +1,22 @@
+[Unit]
+Description=SunCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=suncoincore
+Group=suncoincore
+
+Type=forking
+PIDFile=/var/lib/suncoind/suncoind.pid
+ExecStart=/usr/bin/suncoind -daemon -pid=/var/lib/suncoind/suncoind.pid \
+-conf=/etc/suncoincore/suncoin.conf -datadir=/var/lib/suncoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
