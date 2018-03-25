@@ -39,7 +39,7 @@ Make sure the following is installed:
 Clone the SunCoin repo:
 
     $ apt-get install git
-    $ git clone https://github.com/suncoin-network/suncoin.git
+    $ git clone https://github.com/suncoin-network/suncoin-core.git
 
 ### 4. Build the System
 
